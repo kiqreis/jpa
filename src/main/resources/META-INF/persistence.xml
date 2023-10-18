@@ -24,9 +24,9 @@
             <property name="hibernate.archive.autodetection" value="class"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
-            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/jdbc_sql"/>
-            <property name="hibernate.connection.username" value="root"/>
-            <property name="hibernate.connection.password" value="avuvas0305"/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/yourdb"/>
+            <property name="hibernate.connection.username" value="admin"/>
+            <property name="hibernate.connection.password" value="********"/>
             <property name="hibernate.show_sql" value="true"/>
             <!--        <property name="hibernate.flushMode" value="FLUSH_AUTO" />-->
             <property name="hibernate.hbm2ddl.auto" value="update"/>
