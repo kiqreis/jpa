@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm http://xmlns.jcp.org/xml/ns/persistence/orm_2_1.xsd"
+                 version="2.1">
+
+    <named-query name="moviesNoteMoreThan">
+        <query>
+            SELECT DISTINCT m FROM Movie m
+            JOIN FETCH m.actors
+            WHERE m.filmNote > :filmNote
+        </query>
+    </named-query>
+    
+    <named-native-query name="overallAverage" result-set-mapping="filmNoteMap">
+        <query>
+            SELECT AVG(filmNote) AS average FROM movies;
+        </query>
+    </named-native-query>
+
+    <sql-result-set-mapping name="filmNoteMap">
+        <constructor-result target-class="org.example.model.query.NoteFilm">
+            <column name="average" class="java.lang.Double"/>
+        </constructor-result>
+    </sql-result-set-mapping>
+
+</entity-mappings>

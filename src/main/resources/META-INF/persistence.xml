@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+             http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd" version="1.0">
+    <persistence-unit name="jdbc_sql">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <mapping-file>META-INF/queries.xml</mapping-file>
+        <class>org.example.model.data.User</class>
+        <class>org.example.model.data.Product</class>
+        <class>org.example.model.data.onetoone.Client</class>
+        <class>org.example.model.data.onetoone.Seat</class>
+        <class>org.example.model.data.onetomany.Order</class>
+        <class>org.example.model.data.onetomany.OrderItem</class>
+        <class>org.example.model.data.manytomany.Nephew</class>
+        <class>org.example.model.data.manytomany.Uncle</class>
+        <class>org.example.model.data.manytomany.Actor</class>
+        <class>org.example.model.data.manytomany.Movie</class>
+        <class>org.example.model.composition.Address</class>
+        <class>org.example.model.composition.Supplier</class>
+        <class>org.example.model.composition.Employee</class>
+        <properties>
+            <property name="hibernate.archive.autodetection" value="class"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/jdbc_sql"/>
+            <property name="hibernate.connection.username" value="root"/>
+            <property name="hibernate.connection.password" value="avuvas0305"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <!--        <property name="hibernate.flushMode" value="FLUSH_AUTO" />-->
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+    </persistence-unit>
+</persistence>
