@@ -17,7 +17,7 @@ public class DAO<T> {
     try {
       emf = Persistence.createEntityManagerFactory("jdbc_sql");
     } catch (Exception e) {
-//
+      e.printStackTrace();
     }
   }
 
